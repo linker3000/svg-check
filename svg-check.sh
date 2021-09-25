@@ -56,23 +56,26 @@ rm -f "${oname}"
 
 if [ -f "$fname" ]; then
   echo -n "Converting ${fname} ->> ${oname}..." 
-  while IFS= read -r line; do
+ 
+  while read line || [ -n "$line" ]; do  
+  echo "Read : $line"
 
-# Fix stop without an offset    
-  if [[ $line == *"stop"* ]]; then
-    if ! [[ $line == *"offset"* ]]; then
-    line="${line/stop/'stop offset="0"'}\n" >> "${oname}"
+  # Fix stop without an offset    
+    if [[ $line == *"stop"* ]]; then
+      if ! [[ $line == *"offset"* ]]; then
+        line="${line/stop/'stop offset="0"'}\n" >> "${oname}"
+      fi
     fi
-  fi
 
-#fix feBlend mode="hard-light" is not supported
-  if [[ $line == *"feBlend"* ]]; then
-    if [[ $line == *"hard-light"* ]]; then
-    line="${line/hard-light/normal}\n" >> "${oname}"
+  #fix feBlend mode="hard-light" is not supported
+    if [[ $line == *"feBlend"* ]]; then
+      if [[ $line == *"hard-light"* ]]; then
+        line="${line/hard-light/normal}\n" >> "${oname}"
+      fi
     fi
-  fi
 
-  printf "$line\n" >> "${oname}"
+    printf "$line\n" >> "${oname}"
+    echo "$line"
   done < "${fname}"
   echo "Done!"
 else
