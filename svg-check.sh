@@ -58,7 +58,6 @@ if [ -f "$fname" ]; then
   echo -n "Converting ${fname} ->> ${oname}..." 
  
   while read line || [ -n "$line" ]; do  
-  echo "Read : $line"
 
   # Fix stop without an offset    
     if [[ $line == *"stop"* ]]; then
@@ -75,7 +74,6 @@ if [ -f "$fname" ]; then
     fi
 
     printf "$line\n" >> "${oname}"
-    echo "$line"
   done < "${fname}"
   echo "Done!"
 else
