@@ -10,7 +10,7 @@
 # syntax ./svg-check svgfilename.svg
 #
 # The script will create a subfolder called svgout and the output file/s
-# will be put in there. Existing file swith matching names will be 
+# will be put in there. Existing files with matching names will be 
 # overwritten.
 #
 # To use this script to process multiple files, try:
