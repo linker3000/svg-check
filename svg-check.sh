@@ -7,7 +7,7 @@
 # This bash script parses svg files for known issues that prevent
 # the files being imported in yEd as icons
 #
-# syntax ./svg-check svgfilename.svg
+# syntax ./svg-check.sh svgfilename.svg
 #
 # The script will create a subfolder called svgout and the output file/s
 # will be put in there. Existing files with matching names will be 
