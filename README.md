@@ -1,7 +1,7 @@
 # svg-check
 Fixes incompatibilities in .svg icon files that stop them being imported into the yEd diagram editor.
 
-syntax ./svg-check svgfilename.svg
+syntax ./svg-check.sh svgfilename.svg
 
 The script will create a subfolder called svgout and the output file/s
 will be put in there. Existing files with matching names will be 
