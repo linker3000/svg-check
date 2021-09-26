@@ -62,14 +62,14 @@ if [ -f "$fname" ]; then
   # Fix stop without an offset    
     if [[ $line == *"stop"* ]]; then
       if ! [[ $line == *"offset"* ]]; then
-        line="${line/stop/'stop offset="0"'}\n" >> "${oname}"
+        line="${line/stop/'stop offset="0"'}\n" 
       fi
     fi
 
   #fix feBlend mode="hard-light" is not supported
     if [[ $line == *"feBlend"* ]]; then
       if [[ $line == *"hard-light"* ]]; then
-        line="${line/hard-light/normal}\n" >> "${oname}"
+        line="${line/hard-light/normal}\n" 
       fi
     fi
 
