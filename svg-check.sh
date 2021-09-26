@@ -2,7 +2,7 @@
 #
 # svg-check
 #
-# V1.0 N. Kendrick (linker3000@gmail.com)
+# V1.01 N. Kendrick (linker3000@gmail.com)
 #
 # This bash script parses svg files for known issues that prevent
 # the files being imported in yEd as icons
@@ -44,7 +44,7 @@
 # E&OE. This code is supplied 'as is' with no support.
 #
 fname=$1
-oname="svgout/${fname}"
+oname="svgout/$(basename ${fname})"
 
 if [ -z "{$1}" ]; then
   echo "No file name specified - use: command filename"
