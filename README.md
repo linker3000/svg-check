@@ -1,5 +1,5 @@
 # svg-check
-Fixes incompatibilities in .svg icon files that stop them being imported into the yEd diagram editor.
+Linux bash script to fix incompatibilities in .svg icon files that stop them being imported into the yEd diagram editor.
 
 syntax ./svg-check.sh svgfilename.svg
 
